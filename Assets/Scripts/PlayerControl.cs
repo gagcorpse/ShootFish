@@ -50,6 +50,11 @@ public class PlayerControl : MonoBehaviour {
 			sceneManagerScipt.coinsMain += 1;
 			Destroy (collision.gameObject, 0f);
 		}
+
+		if (collision.gameObject.tag == "Ammo") {	
+			sceneManagerScipt.bulletsMain += 10;
+			Destroy (collision.gameObject, 0f);
+		}
 	}
 
 }

@@ -24,19 +24,7 @@ public class FishControl : MonoBehaviour {
 		}
 	}
 
-	void DropReward()
-	{
-		float spwnRND = Random.Range (1.0f, 101.0f);
-		int INTspnRND = (int)spwnRND;
 
-		if (INTspnRND > 10) 
-		{
-			Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-			Instantiate (sceneManagerScipt.coin1, pos1, Quaternion.identity);
-			print ("hit");
-		}
-
-	}
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -50,7 +38,8 @@ public class FishControl : MonoBehaviour {
 		{	
 			sceneManagerScipt.scoreMain += 10;
 			Destroy (collision.gameObject, 0f);
-			DropReward ();
 		}
 	}
+
+
 }

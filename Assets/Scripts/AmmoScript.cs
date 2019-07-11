@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinScript : MonoBehaviour {
-
-	public int coinValue;
+public class AmmoScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 		CoinSpawnJump ();
 		Destroy (gameObject, 3);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		OnEnable ();
 	}
-		
 
 	void OnEnable()
 	{

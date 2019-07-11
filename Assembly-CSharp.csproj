@@ -46,7 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AmmoScript.cs" />
      <Compile Include="Assets\Scripts\BadBirdScript.cs" />
+     <Compile Include="Assets\Scripts\BirdBonusScript_1.cs" />
      <Compile Include="Assets\Scripts\BirdFlyScript.cs" />
      <Compile Include="Assets\Scripts\BulletControlSCript.cs" />
      <Compile Include="Assets\Scripts\CoinScript.cs" />

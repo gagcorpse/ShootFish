@@ -8,11 +8,13 @@ public class SceneManagerScript : MonoBehaviour {
 	public BulletControlSCript bulletControlScript;
 	public FishControl fishControl;
 	public PlayerControl playerControl;
+	public BirdBonusScript_1 birdBonusScript1;
 
 	public GameObject bullets;
 	public GameObject lives;
 	public GameObject score;
 	public GameObject coins;
+
 
 	[Header("Counts")]
 	public int bulletsMain;
@@ -22,6 +24,7 @@ public class SceneManagerScript : MonoBehaviour {
 
 	[Header("Counts")]
 	public GameObject coin1;
+	public GameObject ammo1;
 
 
 
