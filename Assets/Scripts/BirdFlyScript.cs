@@ -19,13 +19,13 @@ public class BirdFlyScript : MonoBehaviour {
 
 		if (gameObject.tag == "BadBird1") {
 			birdFlySpeed = 5;
-			birdNumTag = 1;
 		}
 
 		if (gameObject.tag == "Bird10")
 			birdFlySpeed = Random.Range(2.0f,2.8f);
 
-
+		if (gameObject.tag == "BonusBird1")
+			birdFlySpeed = Random.Range(1.5f,3.8f);
 	}
 	
 	// Update is called once per frame

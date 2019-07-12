@@ -36,7 +36,13 @@ public class FishControl : MonoBehaviour {
 
 		if (collision.gameObject.tag == "Bird10")
 		{	
-			sceneManagerScipt.scoreMain += 10;
+			sceneManagerScipt.scoreMain += 5;
+			Destroy (collision.gameObject, 0f);
+		}
+
+		if (collision.gameObject.tag == "BonusBird1")
+		{	
+			sceneManagerScipt.scoreMain += 50;
 			Destroy (collision.gameObject, 0f);
 		}
 	}

@@ -6,6 +6,7 @@ public class Emmiter : MonoBehaviour {
 
 	[Header("BonusBirds")]
 	public GameObject bonusBird10;
+	public GameObject birdBonus10_2;
 	public bool isEmittingBonusBirds = true;
 
 	[Header("BadBirds")]
@@ -23,6 +24,7 @@ public class Emmiter : MonoBehaviour {
 	[Header("Birds Emitter Speed")]
 	public float badBirdsEmitterSpeed;
 	public float bonusBirdsEmitterSpeed;
+	public float bonusBirds_2EmitterSpeed;
 
 
 	// Use this for initialization
@@ -30,6 +32,7 @@ public class Emmiter : MonoBehaviour {
 		if (isEmittingBonusBirds == true) 
 		{
 			StartCoroutine (SpawnBonusBirds10 ());
+			StartCoroutine (SpawnBonusBirds_2());
 		}
 
 		if (isEmittingBadBirds == true)
@@ -58,6 +61,27 @@ public class Emmiter : MonoBehaviour {
 			{
 				Vector2 pos2 = new Vector2 (BirdsEmitterLeftUp.transform.position.x, Random.Range (BirdsEmitterLeftUp.transform.position.y, BirdsEmitterLeftDown.transform.position.y));
 				Instantiate (bonusBird10, pos2, Quaternion.identity);
+			}
+		}
+	}
+
+	//feoletovie
+	IEnumerator SpawnBonusBirds_2(){
+		for (;;) {
+			yield return new WaitForSeconds (bonusBirds_2EmitterSpeed);
+			float rndLeftOrRight = Random.Range (1.0f, 3.0f);
+			int rndIntLeftOrRight = (int)rndLeftOrRight;
+
+			if (rndIntLeftOrRight == 1) 
+			{
+				Vector2 pos1 = new Vector2 (BirdsEmitterRightUp.transform.position.x, Random.Range (BirdsEmitterRightUp.transform.position.y, BirdsEmitterRightMiddle.transform.position.y));
+				Instantiate (birdBonus10_2, pos1, Quaternion.identity);
+			}
+
+			if (rndIntLeftOrRight == 2) 
+			{
+				Vector2 pos2 = new Vector2 (BirdsEmitterLeftUp.transform.position.x, Random.Range (BirdsEmitterLeftUp.transform.position.y, BirdsEmitterLeftMiddle.transform.position.y));
+				Instantiate (birdBonus10_2, pos2, Quaternion.identity);
 			}
 		}
 	}

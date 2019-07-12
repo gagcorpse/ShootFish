@@ -46,15 +46,15 @@ public class PlayerControl : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Coin") {	
+		if (collision.gameObject.tag == "Coin") {
+			//collision.gameObject.GetComponent<Rigidbody2D> ().simulated = false;	
 			sceneManagerScipt.coinsMain += 1;
 			Destroy (collision.gameObject, 0f);
 		}
 
 		if (collision.gameObject.tag == "Ammo") {	
-			sceneManagerScipt.bulletsMain += 10;
+			sceneManagerScipt.bulletsMain += sceneManagerScipt.ammoAmount;
 			Destroy (collision.gameObject, 0f);
 		}
 	}
-
 }

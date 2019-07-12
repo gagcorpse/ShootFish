@@ -13,7 +13,7 @@ public class BulletControlSCript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		BulletMove ();
 		Destroy (gameObject,1);
 	}

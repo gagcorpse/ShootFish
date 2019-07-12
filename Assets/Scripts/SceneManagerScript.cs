@@ -9,6 +9,7 @@ public class SceneManagerScript : MonoBehaviour {
 	public FishControl fishControl;
 	public PlayerControl playerControl;
 	public BirdBonusScript_1 birdBonusScript1;
+	public MagnetScript magnetScript;
 
 	public GameObject bullets;
 	public GameObject lives;
@@ -25,7 +26,10 @@ public class SceneManagerScript : MonoBehaviour {
 	[Header("Counts")]
 	public GameObject coin1;
 	public GameObject ammo1;
+	public int ammoAmount;
 
+	[Header("Objects")]
+	public GameObject player;
 
 
 

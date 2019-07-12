@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AmmoScript : MonoBehaviour {
 
+
+
 	// Use this for initialization
 	void Start () {
 		CoinSpawnJump ();
@@ -11,7 +13,7 @@ public class AmmoScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		OnEnable ();
 	}
 
@@ -37,7 +39,7 @@ public class AmmoScript : MonoBehaviour {
 		float rndUpSpeed = Random.Range (1000.0f, 1800.0f);
 		int intrndUpSpeed = (int)rndUpSpeed;
 
-		gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * rndRightSpeed);
-		gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.up * rndUpSpeed);
+		gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * intrndRightSpeed);
+		gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.up * intrndUpSpeed);
 	}
 }

@@ -20,8 +20,11 @@ public class BadBirdScript : MonoBehaviour {
 			Destroy (collision.gameObject, 0);
 		}
 
+		if (collision.gameObject.tag == "BonusBird1") {	
+			Destroy (collision.gameObject, 0);
+		}
+
 		if (collision.gameObject.tag == "Chick") {	
-			//collision.gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.up*50.0f);
 			collision.gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 1500);
 			collision.gameObject.GetComponent<Rigidbody2D> ().AddForce (Vector2.up * 1500);
 		}

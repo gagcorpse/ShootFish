@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\CoinScript.cs" />
      <Compile Include="Assets\Scripts\Emmiter.cs" />
      <Compile Include="Assets\Scripts\FishControl.cs" />
+     <Compile Include="Assets\Scripts\MagnetScript.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\SceneManagerScript.cs" />
  <Reference Include="UnityEngine.UI">
