@@ -46,17 +46,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FullTiltBoogie\RotateFlareHolder.cs" />
+     <Compile Include="Assets\LightningBolt\LightningBoltScript.cs" />
      <Compile Include="Assets\Scripts\AmmoScript.cs" />
      <Compile Include="Assets\Scripts\BadBirdScript.cs" />
+     <Compile Include="Assets\Scripts\BallScript.cs" />
      <Compile Include="Assets\Scripts\BirdBonusScript_1.cs" />
      <Compile Include="Assets\Scripts\BirdFlyScript.cs" />
      <Compile Include="Assets\Scripts\BulletControlSCript.cs" />
      <Compile Include="Assets\Scripts\CoinScript.cs" />
      <Compile Include="Assets\Scripts\Emmiter.cs" />
      <Compile Include="Assets\Scripts\FishControl.cs" />
+     <Compile Include="Assets\Scripts\GoldenRainScript.cs" />
+     <Compile Include="Assets\Scripts\MagnetFishScript.cs" />
      <Compile Include="Assets\Scripts\MagnetScript.cs" />
+     <Compile Include="Assets\Scripts\MagnetScriptItem.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\SceneManagerScript.cs" />
+     <None Include="Assets\LightningBolt\Readme.txt" />
+     <None Include="Assets\FullTiltBoogie\Helpers\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

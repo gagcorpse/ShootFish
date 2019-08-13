@@ -12,6 +12,10 @@ public class BirdBonusScript_1 : MonoBehaviour {
 	public int percent15coinsdrop;
 	public int percent5coinsdrop;
 	public int ammodroprate;
+	public int magnetdroprate;
+	public int fishmagnetdroprate;
+	public int goldfishdroprate;
+	public int goldenraindroprate;
 
 	// Use this for initialization
 	void Start () {
@@ -43,7 +47,27 @@ public class BirdBonusScript_1 : MonoBehaviour {
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
 		Instantiate (sceneManagerScipt.ammo1, pos1, Quaternion.identity);
 	}
+
+	public void SpawnMagnet1(){
+		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
+		Instantiate (sceneManagerScipt.magnet1, pos1, Quaternion.identity);
+	}
+
+	public void SpawnFishMagnet1(){
+		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
+		Instantiate (sceneManagerScipt.fishmagnet1, pos1, Quaternion.identity);
+	}
 		
+	public void SpawnGoldFish1(){
+		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
+		Instantiate (sceneManagerScipt.goldfish1, pos1, Quaternion.identity);
+	}
+
+	public void SpawnGoldenRain1(){
+		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
+		Instantiate (sceneManagerScipt.goldenrain1, pos1, Quaternion.identity);
+	}
+
 	void DropRewards1()
 	{
 		float spwnRND = Random.Range (1.0f, 101.0f);
@@ -78,12 +102,41 @@ public class BirdBonusScript_1 : MonoBehaviour {
 				Spawn ();
 			}
 		}
+
 		float spwnRND2 = Random.Range (1.0f, 101.0f);
 		int INTspnRND2 = (int)spwnRND2;
-		print (INTspnRND2);
 		if (INTspnRND2 <= (100-(100-ammodroprate))) 
 		{
 			SpawnAmmo1 ();
 		}
+
+		float spwnRND3 = Random.Range (1.0f, 101.0f);
+		int INTspnRND3 = (int)spwnRND3;
+		if (INTspnRND3 <= (100-(100-magnetdroprate))) 
+		{
+			SpawnMagnet1 ();
+		}
+
+		float spwnRND4 = Random.Range (1.0f, 101.0f);
+		int INTspnRND4 = (int)spwnRND4;
+		if (INTspnRND4 <= (100-(100-fishmagnetdroprate))) 
+		{
+			SpawnFishMagnet1 ();
+		}
+
+		float spwnRND5 = Random.Range (1.0f, 101.0f);
+		int INTspnRND5 = (int)spwnRND5;
+		if (INTspnRND5 <= (100-(100-goldfishdroprate))) 
+		{
+			SpawnGoldFish1 ();
+		}
+
+		float spwnRND6 = Random.Range (1.0f, 101.0f);
+		int INTspnRND6 = (int)spwnRND6;
+		if (INTspnRND6 <= (100-(100-goldenraindroprate))) 
+		{
+			SpawnGoldenRain1 ();
+		}
+
 	}
 }

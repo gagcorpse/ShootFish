@@ -13,6 +13,10 @@ public class Emmiter : MonoBehaviour {
 	public GameObject badBird1;
 	public bool isEmittingBadBirds = true;
 
+	[Header("Balls")]
+	public GameObject ball1;
+	public bool isBallEmitter = true;
+
 	[Header("Birds Emitter")]
 	public GameObject BirdsEmitterRightUp;
 	public GameObject BirdsEmitterRightMiddle;
@@ -21,10 +25,11 @@ public class Emmiter : MonoBehaviour {
 	public GameObject BirdsEmitterLeftMiddle;
 	public GameObject BirdsEmitterLeftDown;
 
-	[Header("Birds Emitter Speed")]
+	[Header("Objects Emitter Speed")]
 	public float badBirdsEmitterSpeed;
 	public float bonusBirdsEmitterSpeed;
 	public float bonusBirds_2EmitterSpeed;
+	public float ball1EmitterSpeed;
 
 
 	// Use this for initialization
@@ -38,7 +43,9 @@ public class Emmiter : MonoBehaviour {
 		if (isEmittingBadBirds == true)
 		{
 			StartCoroutine (SpawnBadBirds ());
+			StartCoroutine (SpawnBall1 ());
 		}
+
 	}
 	
 	// Update is called once per frame
@@ -102,6 +109,27 @@ public class Emmiter : MonoBehaviour {
 			{
 				Vector2 pos2 = new Vector2 (BirdsEmitterLeftUp.transform.position.x, Random.Range (BirdsEmitterLeftUp.transform.position.y, BirdsEmitterLeftDown.transform.position.y));
 				Instantiate (badBird1, pos2, Quaternion.identity);
+			}
+
+		}
+	}
+
+	IEnumerator SpawnBall1(){
+		for (;;) {
+			yield return new WaitForSeconds (ball1EmitterSpeed);
+			float rndLeftOrRight = Random.Range (1.0f, 3.0f);
+			int rndIntLeftOrRight = (int)rndLeftOrRight;
+
+			if (rndIntLeftOrRight == 1) 
+			{
+				Vector2 pos1 = new Vector2 (BirdsEmitterRightUp.transform.position.x, Random.Range (BirdsEmitterRightDown.transform.position.y, BirdsEmitterRightMiddle.transform.position.y));
+				Instantiate (ball1, pos1, Quaternion.identity);
+			}
+
+			if (rndIntLeftOrRight == 2) 
+			{
+				Vector2 pos2 = new Vector2 (BirdsEmitterLeftUp.transform.position.x, Random.Range (BirdsEmitterLeftDown.transform.position.y, BirdsEmitterLeftMiddle.transform.position.y));
+				Instantiate (ball1, pos2, Quaternion.identity);
 			}
 
 		}

@@ -1,18 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MagnetScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FishControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\BulletControlSCript.cs" Line="16" Column="18" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="50" Column="6" />
-      <File FileName="Assets\Scripts\FishControl.cs" Line="7" Column="1" />
-      <File FileName="Assets\Scripts\SceneManagerScript.cs" Line="32" Column="26" />
-      <File FileName="Assets\Scripts\Emmiter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FishControl.cs" Line="30" Column="4" />
+      <File FileName="Assets\Scripts\SceneManagerScript.cs" Line="83" Column="9" />
+      <File FileName="Assets\Scripts\Emmiter.cs" Line="46" Column="35" />
       <File FileName="Assets\Scripts\BirdFlyScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BadBirdScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CoinScript.cs" Line="31" Column="32" />
-      <File FileName="Assets\Scripts\AmmoScript.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\BirdBonusScript_1.cs" Line="18" Column="1" />
-      <File FileName="Assets\Scripts\MagnetScript.cs" Line="33" Column="1" />
+      <File FileName="Assets\Scripts\CoinScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AmmoScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BirdBonusScript_1.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MagnetScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MagnetScriptItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MagnetFishScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BulletControlSCript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GoldenRainScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

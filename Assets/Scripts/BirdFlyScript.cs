@@ -8,7 +8,7 @@ public class BirdFlyScript : MonoBehaviour {
 	public bool isLeft;
 	public Emmiter emitter;
 	public int birdNumTag;
-
+	public float amplitude;
 	// Use this for initialization
 	void Start () {
 		if (transform.position.x == emitter.BirdsEmitterRightDown.transform.position.x) {
@@ -44,11 +44,15 @@ public class BirdFlyScript : MonoBehaviour {
 	public void BirdMoveRightToLeft()
 	{
 		transform.Translate(Vector3.left * birdFlySpeed * Time.deltaTime);
+		transform.position += transform.up * Mathf.Sin (Time.time * 10f) * 0.01f;
 	}
+
+
 
 	public void BirdMoveLeftToRight()
 	{
 		transform.Translate(Vector3.right * birdFlySpeed * Time.deltaTime);
+		transform.position += transform.up * Mathf.Sin (Time.time * 10f) * 0.01f;
 	}
 
 	public void DestroyBird(){
@@ -57,7 +61,5 @@ public class BirdFlyScript : MonoBehaviour {
 		if (transform.position.x < emitter.BirdsEmitterLeftDown.transform.position.x)
 			Destroy (gameObject,0);
 	}
-
-
-	}
+}
 

@@ -49,11 +49,36 @@ public class PlayerControl : MonoBehaviour {
 		if (collision.gameObject.tag == "Coin") {
 			//collision.gameObject.GetComponent<Rigidbody2D> ().simulated = false;	
 			sceneManagerScipt.coinsMain += 1;
+			sceneManagerScipt.scoreMain += 1;
 			Destroy (collision.gameObject, 0f);
 		}
 
 		if (collision.gameObject.tag == "Ammo") {	
 			sceneManagerScipt.bulletsMain += sceneManagerScipt.ammoAmount;
+			Destroy (collision.gameObject, 0f);
+		}
+
+		if (collision.gameObject.tag == "Magnet")
+		{	
+			sceneManagerScipt.SetMagnetTime ();
+			Destroy (collision.gameObject, 0f);
+		}
+
+		if (collision.gameObject.tag == "FishMagnet")
+		{	
+			sceneManagerScipt.SetFishMagnetTime ();
+			Destroy (collision.gameObject, 0f);
+		}
+
+		if (collision.gameObject.tag == "GoldFish")
+		{	
+			sceneManagerScipt.SetGoldFishTime ();
+			Destroy (collision.gameObject, 0f);
+		}
+
+		if (collision.gameObject.tag == "GoldenRain")
+		{	
+			sceneManagerScipt.SetGoldenRainTime ();
 			Destroy (collision.gameObject, 0f);
 		}
 	}
