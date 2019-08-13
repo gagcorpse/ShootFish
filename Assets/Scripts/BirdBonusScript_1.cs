@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdBonusScript_1 : MonoBehaviour {
-	public SceneManagerScript sceneManagerScipt;
-	public GameObject ManagerSciptObj;
+//	public SceneManagerScript sceneManagerScipt;
+	//public GameObject ManagerSciptObj;
 
 	[Header("Drop Rate")]
 	public int percent50coinsdrop;
@@ -17,10 +17,17 @@ public class BirdBonusScript_1 : MonoBehaviour {
 	public int goldfishdroprate;
 	public int goldenraindroprate;
 
+	public GameObject coin1;
+	public GameObject ammo1;
+	public GameObject magnet1;
+	public GameObject fishmagnet1;
+	public GameObject goldfish1;
+	public GameObject goldenrain1;
+
 	// Use this for initialization
 	void Start () {
-		ManagerSciptObj = GameObject.Find ("SceneManager");
-		sceneManagerScipt = ManagerSciptObj.GetComponent<SceneManagerScript> ();
+	//	ManagerSciptObj = GameObject.Find ("SceneManager");
+	//	sceneManagerScipt = ManagerSciptObj.GetComponent<SceneManagerScript> ();
 
 	}
 	
@@ -40,32 +47,32 @@ public class BirdBonusScript_1 : MonoBehaviour {
 
 	public void Spawn(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.coin1, pos1, Quaternion.identity);
+		Instantiate (coin1, pos1, Quaternion.identity);
 	}
 
 	public void SpawnAmmo1(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.ammo1, pos1, Quaternion.identity);
+		Instantiate (ammo1, pos1, Quaternion.identity);
 	}
 
 	public void SpawnMagnet1(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.magnet1, pos1, Quaternion.identity);
+		Instantiate (magnet1, pos1, Quaternion.identity);
 	}
 
 	public void SpawnFishMagnet1(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.fishmagnet1, pos1, Quaternion.identity);
+		Instantiate (fishmagnet1, pos1, Quaternion.identity);
 	}
 		
 	public void SpawnGoldFish1(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.goldfish1, pos1, Quaternion.identity);
+		Instantiate (goldfish1, pos1, Quaternion.identity);
 	}
 
 	public void SpawnGoldenRain1(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.goldenrain1, pos1, Quaternion.identity);
+		Instantiate (goldenrain1, pos1, Quaternion.identity);
 	}
 
 	void DropRewards1()

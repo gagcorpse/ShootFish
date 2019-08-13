@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class FishControl : MonoBehaviour {
-	public SceneManagerScript sceneManagerScipt;
+	public GameObject sceneManagerScipt;
 	public Sprite fishNormal;
 	public Sprite fishGold;
 
 
 	// Use this for initialization
 	void Start () {
-		
+		sceneManagerScipt = GameObject.Find ("SceneManager");
 	}
 	
 	// Update is called once per frame
@@ -22,21 +22,21 @@ public class FishControl : MonoBehaviour {
 
 	public void FishDeath()
 	{
-		if (sceneManagerScipt.livesMain == 0)
+		if (sceneManagerScipt.GetComponent<SceneManagerScript>().livesMain == 0)
 		{
-			sceneManagerScipt.LooseGame ();
+			sceneManagerScipt.GetComponent<SceneManagerScript>().LooseGame ();
 			//SceneManager.LoadScene ("MainScene");
 			//sceneManagerScipt.canvas
 		}
 	}
 
 	public void GoldFish(){
-		if (sceneManagerScipt.isFishGold == true)
+		if (sceneManagerScipt.GetComponent<SceneManagerScript>().isFishGold == true)
 		{
 			gameObject.GetComponent<SpriteRenderer> ().sprite = fishGold;
 		}
 
-		if (sceneManagerScipt.isFishGold == false)
+		if (sceneManagerScipt.GetComponent<SceneManagerScript>().isFishGold == false)
 		{
 			gameObject.GetComponent<SpriteRenderer> ().sprite = fishNormal;
 		}
@@ -46,23 +46,23 @@ public class FishControl : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "WireDeath")
 		{	
-			sceneManagerScipt.livesMain -= 1;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().livesMain -= 1;
 			transform.position = new Vector2 (0,0);
 		}
 
 		if (collision.gameObject.tag == "Bird10")
 		{	
-			sceneManagerScipt.birdsToLevelCurr += 1;
-			sceneManagerScipt.birdsAll+=1;
-			sceneManagerScipt.scoreMain += 5;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().birdsToLevelCurr += 1;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().birdsAll+=1;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().scoreMain += 5;
 			Destroy (collision.gameObject, 0f);
 		}
 
 		if (collision.gameObject.tag == "BonusBird1")
 		{	
-			sceneManagerScipt.birdsToLevelCurr += 5;
-			sceneManagerScipt.birdsAll+=1;
-			sceneManagerScipt.scoreMain += 50;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().birdsToLevelCurr += 5;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().birdsAll+=1;
+			sceneManagerScipt.GetComponent<SceneManagerScript>().scoreMain += 50;
 			Destroy (collision.gameObject, 0f);
 		}
 			
@@ -70,12 +70,12 @@ public class FishControl : MonoBehaviour {
 
 	public void Spawn(){
 		Vector2 pos1 = new Vector2 (transform.position.x,transform.position.y);
-		Instantiate (sceneManagerScipt.coin1, pos1, Quaternion.identity);
+		Instantiate (sceneManagerScipt.GetComponent<SceneManagerScript>().coin1, pos1, Quaternion.identity);
 	}
 
 	void DropRewards1()
 	{
-			for (int i = 0; i != sceneManagerScipt.goldFishCoinDrop; i++)
+		for (int i = 0; i != sceneManagerScipt.GetComponent<SceneManagerScript>().goldFishCoinDrop; i++)
 			{
 				Spawn ();
 			}
@@ -83,7 +83,7 @@ public class FishControl : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Bullet" && sceneManagerScipt.isFishGold==true)
+		if (collision.gameObject.tag == "Bullet" && sceneManagerScipt.GetComponent<SceneManagerScript>().isFishGold==true)
 		{	
 			print ("GOLD");
 			DropRewards1 ();

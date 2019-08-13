@@ -45,7 +45,10 @@ public class SceneManagerScript : MonoBehaviour {
 	public GameObject lefttopSP;
 	public GameObject righttopSP;
 	public GameObject canvas;
+
+	[Header("Windows")]
 	public GameObject canvasLooseWindow;
+	public GameObject canvasMainWindow;
 
 	[Header("Boosters")]
 	public GameObject playerMagnet;
@@ -80,17 +83,68 @@ public class SceneManagerScript : MonoBehaviour {
 
 	}
 
+	public void ThanksWindowButton(){
+		canvasLooseWindow.SetActive (false);
+		canvasMainWindow.SetActive (true);
+	}
+
+	public void RestartGame()
+	{
+		canvasMainWindow.SetActive (false);
+
+		livesMain = 1;
+		bulletsMain = 20;
+		scoreMain = 0;
+		coinsMain = 0;
+
+		levelLevel = 1;
+		birdsToLevelCurr = 0;
+
+
+		Vector2 playerpos = new Vector2 (0, -4.5f);
+		player.transform.position = playerpos;
+		player.SetActive (true);
+
+		Vector2 fishpos = new Vector2 (0, 0);
+		fish.transform.position = fishpos;
+		fish.SetActive (true);
+
+		GameObject[] bird10 = GameObject.FindGameObjectsWithTag("Bird10");
+		foreach (GameObject obj in bird10) 
+		{
+			Destroy (obj,0.0f);
+		}
+
+		GameObject[] birdBonus10_2 = GameObject.FindGameObjectsWithTag("BonusBird1");
+		foreach (GameObject obj in birdBonus10_2) 
+		{
+			Destroy (obj,0.0f);
+		}
+
+		GameObject[] BadBird_1 = GameObject.FindGameObjectsWithTag("BadBird1");
+		foreach (GameObject obj in BadBird_1) 
+		{
+			Destroy (obj,0.0f);
+		}
+
+			UIBulletsManager ();
+			UILivesManager();
+			UIScoreManager();
+			UICoinManager();
+
+	}
+
 	public void LooseGame(){
 		scoreLoose.GetComponent<Text>().text = "" + scoreMain;
-		birdsLoose.GetComponent<Text>().text = "" +birdsAll;
+		birdsLoose.GetComponent<Text>().text = "" + birdsAll;
 		coinsLoose.GetComponent<Text>().text = "" +  coinsMain;
-		canvasLooseWindow.SetActive (true);
+
 		player.SetActive (false);
 		fish.SetActive (false);
 		emmiter.isEmittingBadBirds = false;
 		emmiter.isEmittingBonusBirds = false;
 
-
+		canvasLooseWindow.SetActive (true);
 	}
 	
 	// Update is called once per frame
